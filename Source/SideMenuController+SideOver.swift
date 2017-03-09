@@ -101,7 +101,7 @@ extension SideMenuController {
                 shouldClose = leftToRight && sidePanel.frame.minX >  (screenSize.width - sidePanelWidth)
             }
             
-            animate(toReveal: !shouldClose)
+            animate(toReveal: !shouldClose, finished: {})
         }
     }
     
@@ -158,12 +158,12 @@ extension SideMenuController {
         if (left && sidePanelPosition.isPositionedLeft) ||
             (!left && !sidePanelPosition.isPositionedLeft) {
             if sidePanelVisible {
-                animate(toReveal: false)
+                animate(toReveal: false, finished: {})
             }
         } else {
             if !sidePanelVisible {
                 prepare(sidePanelForDisplay: true)
-                animate(toReveal: true)
+                animate(toReveal: true, finished: {})
             }
         }
     }
