@@ -178,7 +178,7 @@ extension SideMenuController {
                     }
                 }
                 
-                animate(toReveal: reveal)
+                animate(toReveal: reveal, finished: {})
             }
         }
     }
