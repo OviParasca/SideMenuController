@@ -332,6 +332,7 @@ open class SideMenuController: UIViewController, UIGestureRecognizerDelegate {
             if updated {
                 let delegateMethod = reveal ? self.delegate?.sideMenuControllerDidReveal : self.delegate?.sideMenuControllerDidHide
                 delegateMethod?(self)
+                finished()
             }
         }
     }
