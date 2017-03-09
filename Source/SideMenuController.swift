@@ -46,7 +46,7 @@ public extension SideMenuController {
                 prepare(sidePanelForDisplay: true)
             }
             
-            animate(toReveal: !sidePanelVisible)
+            animate(toReveal: !sidePanelVisible, finished: {})
         }
     }
     
@@ -119,7 +119,7 @@ public extension SideMenuController {
             }
             
             if sidePanelVisible {
-                animate(toReveal: false)
+                animate(toReveal: false, finished: {})
             }
         }
     }
@@ -349,7 +349,7 @@ open class SideMenuController: UIViewController, UIGestureRecognizerDelegate {
     }
     
     func handleTap() {
-        animate(toReveal: false)
+        animate(toReveal: false, finished: {})
     }
     
     // MARK:- UIGestureRecognizerDelegate -
